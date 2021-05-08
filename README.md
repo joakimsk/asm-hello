@@ -90,14 +90,10 @@ We put our syscall function in rdx
 
 
 We put our arguments in:
-
-rdi (first argument)
-
-rsi (second argument)
-
-rdx (third argument)
-
-r10, r8, r9
+- rdi (first argument)
+- rsi (second argument)
+- rdx (third argument)
+- r10, r8, r9 (and so forth)
 
 ## Check retval of exit
 ./exit; echo $?
