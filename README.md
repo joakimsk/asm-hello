@@ -48,14 +48,28 @@ _start:
 Read more about registers, depends on bitness 64, 32, 16, 8
 https://www.cs.uaf.edu/2017/fall/cs301/lecture/09_11_registers.html
 
-### Scratch registers on 64 and 32 bit
-rcx, ecx
-rdx, edx
-rsi, esi
-rdi, edi
-r8, r8d
-(..)
-r11, r11d
+### Registers available on various architectures
+Shamelessly copied from [link](https://www.cs.uaf.edu/2017/fall/cs301/lecture/09_11_registers.html)
+
+| Name 	| Notes                                                                                           	| Type      	| 64-bit long 	| 32-bit int 	| 16-bit short 	| 8-bit char 	|
+|------	|-------------------------------------------------------------------------------------------------	|-----------	|-------------	|------------	|--------------	|------------	|
+| rax  	| Values are returned from functions in this register.                                            	| scratch   	| rax         	| eax        	| ax           	| ah and al  	|
+| rcx  	| Typical scratch register.  Some instructions also use it as a counter.                          	| scratch   	| rcx         	| ecx        	| cx           	| ch and cl  	|
+| rdx  	| Scratch register.                                                                               	| scratch   	| rdx         	| edx        	| dx           	| dh and dl  	|
+| rbx  	| Preserved register: don't use it without saving it!                                             	| preserved 	| rbx         	| ebx        	| bx           	| bh and bl  	|
+| rsp  	| The stack pointer.  Points to the top of the stack                                            	| preserved 	| rsp         	| esp        	| sp           	| spl        	|
+| rbp  	| Preserved register.  Sometimes used to store the old value of the stack pointer, or the "base". 	| preserved 	| rbp         	| ebp        	| bp           	| bpl        	|
+| rsi  	| Scratch register.  Also used to pass function argument #2 in 64-bit Linux                       	| scratch   	| rsi         	| esi        	| si           	| sil        	|
+| rdi  	| Scratch register.  Function argument #1 in 64-bit Linux                                         	| scratch   	| rdi         	| edi        	| di           	| dil        	|
+| r8   	| Scratch register.  These were added in 64-bit mode, so they have numbers, not names.            	| scratch   	| r8          	| r8d        	| r8w          	| r8b        	|
+| r9   	| Scratch register.                                                                               	| scratch   	| r9          	| r9d        	| r9w          	| r9b        	|
+| r10  	| Scratch register.                                                                               	| scratch   	| r10         	| r10d       	| r10w         	| r10b       	|
+| r11  	| Scratch register.                                                                               	| scratch   	| r11         	| r11d       	| r11w         	| r11b       	|
+| r12  	| Preserved register.  You can use it, but you need to save and restore it.                       	| scratch   	| r12         	| r12d       	| r12w         	| r12b       	|
+| r13  	| Preserved register.                                                                             	| scratch   	| r13         	| r13d       	| r13w         	| r13b       	|
+| r14  	| Preserved register.                                                                             	| scratch   	| r14         	| r14d       	| r14w         	| r14b       	|
+| r15  	| Preserved register.                                                                             	| scratch   	| r15         	| r15d       	| r15w         	| r15b       	|
+
 
 ## Syscall
 System calls can be called from code, depends on OS/architecture.
