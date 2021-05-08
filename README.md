@@ -85,6 +85,8 @@ Used syscalls:
 1	AUE_EXIT	ALL	{ void exit(int rval); }
 4	AUE_NULL	ALL	{ user_ssize_t write(int fd, user_addr_t cbuf, user_size_t nbyte); } 
 
+See table [here](https://filippo.io/linux-syscall-table/)
+
 ### On 64 bit OS X
 We put our syscall function in rdx
 
@@ -99,3 +101,8 @@ We put our arguments in:
 ./exit; echo $?
 
 Should return 0 for a correct exit
+
+## For the future
+DSP references
+[TMS320C2X](http://www.elec.canterbury.ac.nz/intranet/dsl/p40-ti/p90-historical/TMS320C2X_User_Guide.pdf)
+[DSP fundamentals](https://core.ac.uk/download/pdf/44195315.pdf)
