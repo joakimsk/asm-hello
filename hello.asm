@@ -1,7 +1,6 @@
 global _main
 
 section .text
-
 _main:                      ; tells linker entry point
     mov rax, 0x02000004     ; 64 bit register syscall to  ssize_t write(int fd, const void *buf, size_t nbytes);
     mov rdi, 1              ; rdi scratch register, set file descriptor = stdout (1)

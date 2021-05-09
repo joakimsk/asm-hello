@@ -75,9 +75,11 @@ Shamelessly copied from [link](https://www.cs.uaf.edu/2017/fall/cs301/lecture/09
 System calls can be called from code, depends on OS/architecture.
 See on OS X: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/usr/include/sys/syscall.h
 
-[linux system calls](https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm)
-[os x system calls howto 32 vs 64 bit](https://filippo.io/making-system-calls-from-assembly-in-mac-os-x/)
-[os x system calls](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master)
+- [linux system calls](https://www.tutorialspoint.com/assembly_programming/assembly_system_calls.htm)
+- [os x system calls howto 32 vs 64 bit](https://filippo.io/making-system-calls-from-assembly-in-mac-os-x/)
+- [os x system calls](https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master)
+- [os x system calls](https://jameshfisher.com/2017/01/31/macos-system-calls/)
+- [os x 64 bit asm](http://www.idryman.org/blog/2014/12/02/writing-64-bit-assembly-on-mac-os-x/)
 
 For 64 bit, put system call in rax register, you need to add 0x20000000 to the syscall int
 
@@ -97,12 +99,18 @@ We put our arguments in:
 - rdx (third argument)
 - r10, r8, r9 (and so forth)
 
+[using rel in os x 64 bit](http://caswenson.com/2018_02_06_64bit_assembly_language_programming_under_macos_with_nasm.html)
+
 ## Check retval of exit
 ./exit; echo $?
 
 Should return 0 for a correct exit
 
 ## For the future
+[hello asm variants](https://montcs.bloomu.edu/Information/LowLevel/Assembly/hello-asm.html)
+[nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/)
+[gdb](https://ncona.com/2019/12/debugging-assembly-with-gdb/)
+[debugging on os x](https://lord.io/gdb-on-osx/)
 DSP references
 [TMS320C2X](http://www.elec.canterbury.ac.nz/intranet/dsl/p40-ti/p90-historical/TMS320C2X_User_Guide.pdf)
 [DSP fundamentals](https://core.ac.uk/download/pdf/44195315.pdf)
