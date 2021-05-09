@@ -4,7 +4,11 @@ An attempt at learning some assembly
 ## Assemble
 To assemble the .asm file into hello_world.o using the Mach-O 64bit object file notation format (used by MacOS Mojave)
 
-nasm -f macho64 hello_world.asm
+nasm -f macho64 hello.asm
+
+If you plan to use a debugger, you need to have debugging symbols included. Switch -g helps, and you can choose debug symbol format DWARF using -F dwarf, like this:
+
+nasm -f macho64 -g -F dwarf hello.asm
 
 ## Linking
 
