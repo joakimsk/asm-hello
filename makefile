@@ -1,4 +1,4 @@
-all: hello.out exit.out hello2.out
+all: hello.out exit.out hello2.out add.out
 
 hello2.o:  hello2.asm
 		nasm -f macho64 -g -F dwarf hello2.asm
@@ -17,3 +17,10 @@ exit.o:  exit.asm
 
 exit.out:   exit.o
 		ld -macosx_version_min 10.15.7 -lSystem -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -no_pie -o exit.out exit.o
+
+
+add.o:  add.asm
+		nasm -f macho64 -g -F dwarf add.asm
+
+add.out:   add.o
+		ld -macosx_version_min 10.15.7 -lSystem -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -no_pie -o add.out add.o

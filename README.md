@@ -106,7 +106,51 @@ We put our arguments in:
 
 Should return 0 for a correct exit
 
+### GDB
+Must be started with sudo on modern OS X
+
+sudo gdb hello.out
+
+[gdb asm ref](https://visualgdb.com/gdbreference/commands/disassemble)
+[gdb ref](https://web.cecs.pdx.edu/~apt/cs491/gdb.pdf)
+
+#### Start without shell if needed, in init file
+echo 'set startup-with-shell off' > .gdbinit
+
+#### Set disassembly flavor to intel, not at&t, in init file
+echo 'set disassembly-flavor intel' > .gdbinit
+
+#### Set breakpoint
+Set breakpoint on main entry:
+
+b main
+
+#### Disassemble and inspect registers
+Dump of disassembled code after breakpoint:
+
+disassemble
+
+View register content:
+
+info registers
+
+View single register:
+
+info registers rdi
+
+Use x addr to inspect memory, example:
+
+x 0x100004013
+(gdb) x 0x100004013
+0x100004013 <res>:	0x00000039
+
+#### Troubleshooting gdb
+gdb seems to sometimes work and break on breakpoint, other times it starts the thread and hangs, after using run command
+
+[gdb macos](https://timnash.co.uk/getting-gdb-to-semi-reliably-work-on-mojave-macos/)
+
 ## For the future
+[learn to use valgrind, only on linux](https://heeris.id.au/2016/valgrind-gdb/)
 [hello asm variants](https://montcs.bloomu.edu/Information/LowLevel/Assembly/hello-asm.html)
 [nasm](https://cs.lmu.edu/~ray/notes/nasmtutorial/)
 [gdb](https://ncona.com/2019/12/debugging-assembly-with-gdb/)
@@ -114,3 +158,6 @@ Should return 0 for a correct exit
 DSP references
 [TMS320C2X](http://www.elec.canterbury.ac.nz/intranet/dsl/p40-ti/p90-historical/TMS320C2X_User_Guide.pdf)
 [DSP fundamentals](https://core.ac.uk/download/pdf/44195315.pdf)
+[more asm](https://www.csie.ntu.edu.tw/~cyy/courses/assembly/12fall/lectures/handouts/lec13_x86Asm.pdf)
+[adding numbers in asm...](https://padamthapa.com/blog/adding-numbers-in-assembly-language-programming/)
+[stack rbp register and direction](https://stackoverflow.com/questions/41912684/what-is-the-purpose-of-the-rbp-register-in-x86-64-assembler/41912747)
