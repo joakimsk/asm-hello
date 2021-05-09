@@ -22,7 +22,7 @@ On OS X 11 and higher, use
 
 ld -macosx_version_min 10.15.7 -o hello hello.o -lSystem -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
 
-Use -s to strip the output, removing symbol table
+Use -s to strip the output, removing symbol table, if you do not plan to debug and want as small file as possible.
 
 ## RIP-relative vs absolute addressing
 Mac OS X may not allow absolute addressing. Can be handled in various ways.
